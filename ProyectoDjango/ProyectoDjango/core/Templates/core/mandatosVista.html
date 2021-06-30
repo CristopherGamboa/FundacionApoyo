@@ -1,16 +1,18 @@
 {% load static %}
+{% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fundación Apoyo</title>
-
     <link rel="stylesheet" href="{% static 'core/css/main.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 </head>
+
 <body>
     <div class="row">
         <div class="col-md-1"></div>
@@ -44,42 +46,41 @@
                     </div>
                 </nav>
             </header>
-            <div class="container-fluid border bg-white py-5">
-                <div id="login-row" class="row justify-content-center align-items-center">
-                    <div id="login-column" class="col-md-6">
-                        <div id="login-box" class="col-md-12">
-                            <form id="login-form" class="form" action="{% url 'serviciosFuncionario' %}">
-                                <h3 class="text-center text-info text-dark">Inicio de sesión</h3>
-                                <div class="form-group">
-                                    <label for="username" class="text-info text-dark">E-mail:</label><br>
-                                    <input type="text" name="username" id="usuario" class="form-control" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="password" class="text-info text-dark">Contraseña:</label><br>
-                                    <input type="password" name="password" id="clave" class="form-control" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="remember-me" class="text-info text-dark py-3"><span>Recuérdame</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
-                                    <input type="submit" class="btn btn-info btn-md bg-dark text-white" value="Ingresar">
-                                </div>
-                                <div id="register-link" class="text-right py-3">
-                                    <a href="{% url 'signUp' %}" class="text-info text-dark">¡Regístrate aquí!</a>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+            <div class="bg-white">
+                <table class="table table-white table-striped table-hover table-bordered">
+                    <thead >
+                        <tr>
+                            <td scope="col">Id Mandato</td>
+                            <td scope="col">Monto</td>
+                            <td scope="col">Numero de tarjeta</td>
+                            <td scope="col">Fecha de vencimiento</td>
+                            <td scope="col">Codigo Verificador</td>
+                            <td scope="col">Día de pago</td>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for mt in mandatos %}
+                        <tr>
+                            <td scope="col">{{mt.idMandato}}</td>
+                            <td scope="col">{{mt.montoMandato}}</td>
+                            <td scope="col">{{mt.numTarjeta}}</td>
+                            <td scope="col">{{mt.fechaVencimiento}}</td>
+                            <td scope="col">{{mt.codigoVerificador}}</td>
+                            <td scope="col">{{mt.diaPago}}</td>
+    
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
             </div>
         </div>
-        <div class="col-md-1"></div>
     </div>
-
-    <div id="login">
-        
-    </div>
+    <div class="col-md-1"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
         crossorigin="anonymous"></script>
 </body>
+
 </html>

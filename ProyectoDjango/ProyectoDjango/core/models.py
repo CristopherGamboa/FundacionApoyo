@@ -25,3 +25,12 @@ class Usuario(models.Model):
 
     def __str__(self):
         return self.nombreUsuario
+
+class Insumos(models.Model):
+    idInsumo = models.CharField(max_length=50, primary_key=True, verbose_name="Id Insumos")
+    nombreInsumo = models.CharField(max_length=50, verbose_name="Nombre Insumo")
+    claseInsumo = models.CharField(max_length=50, verbose_name="Clase Insumo")
+    costoInsumo = models.CharField(max_length=50, verbose_name="Costo Insumo")
+    fechaVencimiento = models.CharField(max_length=50, verbose_name="Fecha de vencimiento")
+    def __str__(self):
+        return self.nombreInsumo

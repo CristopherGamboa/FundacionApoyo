@@ -1,16 +1,19 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fundación Apoyo</title>
+
 
     <link rel="stylesheet" href="{% static 'core/css/main.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <title>Fundación Apoyo</title>
 </head>
+
 <body>
     <div class="row">
         <div class="col-md-1"></div>
@@ -36,7 +39,8 @@
                                     Inicio de sesión
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <li><a class="dropdown-item" href="{% url 'signInFuncionarios' %}">Funcionarios</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'signInFuncionarios' %}">Funcionarios</a>
+                                    </li>
                                     <li><a class="dropdown-item" href="{% url 'signInDonadores' %}">Donadores</a></li>
                                 </ul>
                             </li>
@@ -44,42 +48,22 @@
                     </div>
                 </nav>
             </header>
-            <div class="container-fluid border bg-white py-5">
-                <div id="login-row" class="row justify-content-center align-items-center">
-                    <div id="login-column" class="col-md-6">
-                        <div id="login-box" class="col-md-12">
-                            <form id="login-form" class="form" action="{% url 'serviciosFuncionario' %}">
-                                <h3 class="text-center text-info text-dark">Inicio de sesión</h3>
-                                <div class="form-group">
-                                    <label for="username" class="text-info text-dark">E-mail:</label><br>
-                                    <input type="text" name="username" id="usuario" class="form-control" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="password" class="text-info text-dark">Contraseña:</label><br>
-                                    <input type="password" name="password" id="clave" class="form-control" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="remember-me" class="text-info text-dark py-3"><span>Recuérdame</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
-                                    <input type="submit" class="btn btn-info btn-md bg-dark text-white" value="Ingresar">
-                                </div>
-                                <div id="register-link" class="text-right py-3">
-                                    <a href="{% url 'signUp' %}" class="text-info text-dark">¡Regístrate aquí!</a>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+            <div class="container-fluid bg-white border">
+                <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">SERVICIOS FUNCIONARIOS</h1>
+                <hr class="mt-2 mb-5">
+                <div class="row pb-5">
+                    <h2 class="text-center pt-3"><a class="text-dark" href="{% url 'ingresoSalida' %}"> Registro ingresos/salidas</a></h2>
+                    <h2 class="text-center pt-3"><a class="text-dark" href="{% url 'insumos' %}"> Registrar insumos</a></h2>
+                    <h2 class="text-center pt-3"><a class="text-dark" href="{% url 'insumosVista' %}"> Consultar insumos</a></h2>
                 </div>
             </div>
+            <div class="col-md-1"></div>
         </div>
-        <div class="col-md-1"></div>
-    </div>
 
-    <div id="login">
-        
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
-        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+            crossorigin="anonymous"></script>
 </body>
+
 </html>
