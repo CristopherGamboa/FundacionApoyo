@@ -44,11 +44,11 @@
                     </div>
                 </nav>
             </header>
-            <div class="container-fluid border my-5 py-5">
+            <div class="container-fluid border bg-white py-5">
                 <div id="login-row" class="row justify-content-center align-items-center">
                     <div id="login-column" class="col-md-6">
                         <div id="login-box" class="col-md-12">
-                            <form id="login-form" class="form" action="ingresoSalida.html">
+                            <form id="login-form" class="form" action="{% url 'ingresoSalida' %}">
                                 <h3 class="text-center text-info text-dark">Inicio de sesión</h3>
                                 <div class="form-group">
                                     <label for="username" class="text-info text-dark">E-mail:</label><br>
@@ -63,7 +63,7 @@
                                     <input type="submit" class="btn btn-info btn-md bg-dark text-white" value="Ingresar">
                                 </div>
                                 <div id="register-link" class="text-right py-3">
-                                    <a href="signUp.html" class="text-info text-dark">¡Regístrate aquí!</a>
+                                    <a href="{% url 'signUp' %}" class="text-info text-dark">¡Regístrate aquí!</a>
                                 </div>
                             </form>
                         </div>

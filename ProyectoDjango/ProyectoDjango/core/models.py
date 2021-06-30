@@ -10,3 +10,18 @@ class Mandato(models.Model):
     diaPago = models.CharField(max_length=50, verbose_name="Dia de pago")
     def __str__(self):
         return self.idMandato
+
+class tipoUsuario(models.Model):
+    idTipoUsuario = models.IntegerField(primary_key=True ,verbose_name="Id tipo de usuario") 
+    tipoUsuario = models.CharField(max_length=50, verbose_name="Tipo usuario")
+    def __str__(self):
+        return self.tipoUsuario
+
+class Usuario(models.Model):
+    nombreUsuario = models.CharField(max_length=70, verbose_name="Nombre Usuario")
+    correoUsuario= models.CharField(max_length=50, verbose_name="Correo")
+    contraseñaUsuario= models.CharField(max_length=50, verbose_name="Contraseña")
+    tipoUsuario = models.ForeignKey(tipoUsuario, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.nombreUsuario
