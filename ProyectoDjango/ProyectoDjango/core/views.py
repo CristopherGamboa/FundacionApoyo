@@ -18,3 +18,4 @@ def signInFuncionarios(request):
 
 def signUp(request):
     return render(request, 'core/signUp.html')
+
